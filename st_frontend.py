@@ -212,7 +212,7 @@ def main():
             st.write("Please upload a valid test dataset!") 
         else:
             with st.spinner('Prediction in Progress. Please Wait...'):
-                output = requests.get(backend, 
+                output = requests.post(backend, 
                                         files=files,
                                         timeout=8000)
                 
