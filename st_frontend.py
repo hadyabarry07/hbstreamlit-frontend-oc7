@@ -19,7 +19,7 @@ def main():
     
 
     # Set FastAPI backend
-    backend = "https://oc-p7-fastapi.herokuapp.com"
+    backend = "https://oc-p7-fastapi.herokuapp.com/"
 
     df = pd.read_csv('application_train.csv',index_col='SK_ID_CURR')
     df.drop(df.filter(regex="Unname"), axis=1, inplace=True)
