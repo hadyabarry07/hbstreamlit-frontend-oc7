@@ -74,3 +74,4 @@ uvicorn==0.18.3
 validators==0.20.0
 watchdog==2.1.9
 zipp==3.8.1
+ipython==8.5.0
