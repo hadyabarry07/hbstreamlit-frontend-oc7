@@ -216,8 +216,10 @@ def main():
                 output = requests.post(backend,
                                         files=files,
                                         timeout=8000)
+                decodedout = json.loads(output)
+                finalout = np.asarray(decodedout["Prediction"])
                 
-            st.success(output.json())
+            st.success(finalout)
             # st.download_button(
             #     label='Download',
             #     data=json.dumps(output.json()), # Download as JSON file object
