@@ -214,11 +214,11 @@ def main():
             st.write("Please upload a valid test dataset!") 
         else:
             with st.spinner('Prediction in Progress. Please Wait...'):
-                output = requests.post(headers, backend,
+                output = requests.post(backend,
                                         files=files,
                                         timeout=8000)
                 
-            st.success('Success! Click Download button below to get prediction results (in JSON format)')
+            st.success('Succès! Cliquer sur Download pour le résultat de la prédiction (en format JSON)')
             st.download_button(
                 label='Download',
                 data=json.dumps(output.json()), # Download as JSON file object
