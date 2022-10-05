@@ -19,7 +19,7 @@ def main():
     
 
     # Set FastAPI backend
-    backend = "https://oc-p7-fastapi.herokuapp.com/predict"
+    backend = "https://oc-p7-fastapi.herokuapp.com/"
 
 
     df = pd.read_csv('application_train.csv',index_col='SK_ID_CURR')
