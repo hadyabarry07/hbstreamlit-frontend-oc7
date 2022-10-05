@@ -217,14 +217,8 @@ def main():
                 output = requests.post(backend,
                                         files=files,
                                         timeout=8000)
-                
-            st.success('Succès! Cliquer sur Download pour le résultat de la prédiction (en format JSON)')
-            st.download_button(
-                label='Download',
-                data=json.dumps(output.json()), # Download as JSON file object
-                file_name='resultats_prediction.json'
-            )
-
+                data = json.dumps(output)
+            st.success(data)
             # st.download_button(
             #     label='Download',
             #     data=json.dumps(output.json()), # Download as JSON file object
