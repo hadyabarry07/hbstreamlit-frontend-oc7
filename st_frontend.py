@@ -216,7 +216,7 @@ def main():
                 output = requests.post(backend,
                                         files=files,
                                         timeout=8000)
-                decodedout = json.loads(output)
+                decodedout = output.json()
                 finalout = np.asarray(decodedout["Prediction"])
                 
             st.success(finalout)
