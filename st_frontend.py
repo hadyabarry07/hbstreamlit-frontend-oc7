@@ -20,6 +20,8 @@ def main():
 
     # Set FastAPI backend
     backend = "https://oc-p7-fastapi.herokuapp.com/"
+    headers = {"Content-Type": "application/json"}
+    donnee_json = {'donnee':donnee}
 
     df = pd.read_csv('application_train.csv',index_col='SK_ID_CURR')
     df.drop(df.filter(regex="Unname"), axis=1, inplace=True)
@@ -212,7 +214,7 @@ def main():
             st.write("Please upload a valid test dataset!") 
         else:
             with st.spinner('Prediction in Progress. Please Wait...'):
-                output = requests.post(backend, 
+                output = requests.post(headers, backend, json=donnee_json,
                                         files=files,
                                         timeout=8000)
                 
