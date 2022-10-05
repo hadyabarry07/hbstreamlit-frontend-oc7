@@ -217,7 +217,7 @@ def main():
                                         files=files,
                                         timeout=8000)
                 decodedout = output.json()
-                finalout = np.asarray(decodedout["Prediction"])
+                finalout = np.asarray(decodedout)
                 
             st.success(finalout)
             # st.download_button(
