@@ -218,7 +218,13 @@ def main():
                                         files=files,
                                         timeout=8000)
                 
-            st.success(output.json())
+            st.success('Success! Click Download button below to get prediction results (in JSON format)')
+            st.download_button(
+                label='Download',
+                data=json.dumps(output.json()), # Download as JSON file object
+                file_name='resultats_prediction.json'
+            )
+
             # st.download_button(
             #     label='Download',
             #     data=json.dumps(output.json()), # Download as JSON file object
