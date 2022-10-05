@@ -19,8 +19,7 @@ def main():
     
 
     # Set FastAPI backend
-    backend = "https://oc-p7-fastapi.herokuapp.com/"
-    headers = {"Content-Type": "application/json"}
+    backend = "https://oc-p7-fastapi.herokuapp.com/predict"
 
 
     df = pd.read_csv('application_train.csv',index_col='SK_ID_CURR')
@@ -217,8 +216,8 @@ def main():
                 output = requests.post(backend,
                                         files=files,
                                         timeout=8000)
-                data = json.dumps(output)
-            st.success(data)
+                
+            st.success(output.json())
             # st.download_button(
             #     label='Download',
             #     data=json.dumps(output.json()), # Download as JSON file object
